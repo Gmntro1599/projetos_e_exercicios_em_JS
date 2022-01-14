@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora:orçamento de cerâmica</title>
+</head>
+<body>
+<h1>Calcule seu orçamento de cerâmica</h1>
+<p>Essa ferramenta permite com que você calcule quantas caixas de ceramica você <br> 
+irá precisar na sua obra, como também o quanto você precisará gastar considerando 
+ o preço por m² da cerâmica. </p>
+
+ <h2>Resultado:</h2>
+      
+<Script>
+/*
+Modelo em python
+
+lp=int(input('Lagura do piso:'))
+cp=int(input('Cumprimento do piso:'))
+a=lp*cp
+ce=a/2.5
+ca=ce*8
+pca=a*27
+print('precisarão de {} e {} caixas e {} reais'.format(ca,ce,pca))
+*/
+var lagura_piso = Number.parseFloat(window.prompt('Qual a largura  do piso?'))
+var cumprimento_piso = Number.parseFloat(window.prompt('Qual o cumprimento do piso?'))
+var area_local = lagura_piso * cumprimento_piso
+var m_quadadro_cermica = Number.parseFloat(window.prompt('Qual o m² da ceramica?'))
+var quantd_caixas = area_local / m_quadadro_cermica
+var quantd_ceramica_por_caixa = Number.parseFloat(window.prompt('quantas cerâmicas vem por caixa?'))
+var quantd_ceramica = quantd_caixas * quantd_ceramica_por_caixa
+var preço_caixa = Number.parseFloat(window.prompt('Quanto é o preço por caixa?'))
+var preço_total = area_local * preço_caixa
+//window.alert('Você precisará de ' + quantd_ceramica + ' Ceramicas,' + quantd_caixas + ' caixas e ' + preço_total + ' reais para colocar cerâmica na área informada') Primeira maneira
+//window.alert(`Você precisará de ${quantd_ceramica} Ceramicas, ${quantd_caixas}  caixas e ${preço_total}      reais para colocar cerâmica na área informada.`) //Segunda maneira
+document.write((`Você precisará de ${quantd_ceramica} Ceramicas, ${quantd_caixas}  caixas e ${preço_total}      reais para colocar cerâmica na área informada.`) //Segunda maneira
+)
+
+
+
+</Script>  
+</body>
+</html>
