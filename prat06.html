@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo DOM</title>
+    <Style>
+        div#area {
+            font: normal 30pt times;
+            background: yellow;
+            color: rgb(0, 0, 0);
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            }   
+    </Style>
+</head>
+<body>
+
+    <h1>Aprendendo DOM I</h1>
+    <p>
+    
+      <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+       Vá adiante...
+      </div>
+ 
+       
+    </p>
+    <script>
+       /* function clicar() {
+            var clique = window.document.getElementById('area')
+            clique.innerText = 'Obrigado!!!'
+        }
+        function entrar() {
+            var entrar = windouw.document.getElementById('area')
+            entrar.innerText = 'Você entrou!!'
+        }
+        function sair() {
+            var sair = window.document.getElementById('area')   
+            sair.innerText = 'Você saiu!!!'
+        }
+        */
+
+        var clique = window.document.getElementById('area')
+            function clicar(){
+                clique.innerText = 'Vá Além!!'
+                clique.style.background = 'green'
+              }
+            function entrar() {
+                clique.innerText = 'Você entrou!!!'
+                clique.style.background = 'blue' 
+             }
+            function sair()  {
+                clique.innerText = 'Você saiu!!!' 
+                clique.style.background = 'red'      
+               
+             }   
+
+            
+
+
+
+        
+
+    </script>
+    
+    
+    
+</body>
+</html>

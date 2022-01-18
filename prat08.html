@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço em cerâmica</title>
+    <style>
+        body {
+            font: normal 13pt arial;
+        }
+        input {
+            font: normal 13pt arial;
+        }
+        div#orçamento {
+            font: 20pt normal arial;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>Informe os dados:</h1>
+    <p>Qual a largura  do seu piso?</p>
+    <input type="number " name="infor1" id="infor1">
+    <p>Qual o cumprimento do seu piso?</p>
+    <input type="number" name="infor2" id="infor2">
+    <p>Qual o m² da ceramica?</p>
+    <input type="number" name="infor3" id="infor3">
+    <p>Quantas cerâmicas vem por caixa?</p>
+    <input type="numebr" name="infor4" id="infor4">
+    <p>Quanto é o preço por caixa?</p>
+    <input type="number" name="infor5" id="infor5">
+    <br>
+ <div id="orçamento"><strong>Orçamento:</strong></div>
+ <br>
+ <input type="button" value="calcular" onclick="calcular_orçamento()">
+
+    <script>
+        function calcular_orçamento() {
+
+            var infor_lagura_piso = window.document.getElementById('infor1')
+            var infor_cumprimento_piso = window.document.getElementById('infor2')
+            var infor_m_quadadro_cermica = window.document.getElementById('infor3')
+            var infor_quantd_ceramica_por_caixa = window.document.getElementById('infor4')
+            var infor_preço_caixa = window.document.getElementById('infor5')
+            var orçamento = window.document.getElementById('orçamento')
+            var lagura_piso = Number.parseFloat(infor_lagura_piso.value)
+            var cumprimento_piso = Number.parseFloat(infor_cumprimento_piso.value)
+            var m_quadadro_cermica = Number.parseFloat(infor_m_quadadro_cermica.value)
+            var area_local = lagura_piso * cumprimento_piso
+            var quantd_caixas = area_local / m_quadadro_cermica
+            var quantd_ceramica_por_caixa = Number.parseFloat(infor_quantd_ceramica_por_caixa.value)
+            var quantd_ceramica = quantd_caixas * quantd_ceramica_por_caixa
+            var preço_caixa = Number.parseFloat(infor_preço_caixa.value)
+            var preço_total = area_local * preço_caixa
+            orçamento.innerHTML = ` Você usará ${quantd_ceramica} cerâmicas, terá que comprar ${quantd_caixas} caixas e gastará o valor toral de ${preço_total} reais.`
+
+           
+
+         }
+
+        
+    </script>
+</body>
+</html>
