@@ -12,7 +12,7 @@
         input {
             font: normal 15pt arial;}
 
-        div#res_imc {
+        div#res {
             font: 20pt normal arial;
             margin-top: 25px } 
     </style>
@@ -21,31 +21,37 @@
     <h1>Índice de Massa Corporal</h1>
     Digite seu Peso   <input type="number" name="inf.pes" id="inf.pes">
     Digite sua Altura <input type="number" name="inf.alt" id="inf.alt">
-    <input type="button" value="Calcular" onclick="calcular_imc()">
+   <input type="button" value="Calcular" onclick="calcular_imc()">
     <br>
     <div 
-    id="res_imc" ></div>
+    id="res" ></div>
     <script>
          
          function calcular_imc(){
             var inf_pes = window.document.getElementById('inf.pes')
             var inf_alt = window.document.getElementById('inf.alt')
-            var res = window.document.getElementById('res_imc')
+            var res = window.document.getElementById('res')
             var pes = Number.parseFloat(inf_pes.value)
             var alt = Number.parseFloat(inf_alt.value)
-            var imc = pes / (alt ** 2)   
-            if (imc < 18.50) {res_imc.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está abaixo do peso.`}
-            if (imc > 18.50) {res_imc.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com seu peso normal.`}
-            if (imc < 24.99) {res_imc.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com seu peso normal.`}
-            if (imc > 25.00 )  {res_imc.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com sobrepeso`}
-            if (imc < 29.99)  {res_imc.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com sobrepeso`}
-            if (imc > 30.00)  {res_imc.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com Obesidade Grau I`}
-            if (imc < 34.99)  {res_imc.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com Obesidade Grau I`}
-            if (imc > 35.00)  {res_imc.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com Obesidade Grau II`}
-            if (imc < 39.99)  {res_imc.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com Obesidade Grau II`}
-            if (imc > 40.00 ) {res_imc.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com Obesidade Mórbida`}
+            var imc = pes / (alt ** 2)
         
-        }    
+            if (imc < 18.50) {res.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está abaixo do peso.`
+            }
+            
+                 if (imc >= 18.51 && imc <= 24.99) {res.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com seu peso normal.`
+            }
+                 if (imc >= 25.00 && imc <= 29.99 )  {res.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com sobrepeso`
+            }
+                 if (imc >= 30.00 && imc <= 34.99)  {res.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com Obesidade Grau I`
+            }
+                 if (imc >= 35.00 && imc <= 39.99)  {res.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com Obesidade Grau II`
+            }
+                 if (imc >= 40.00 ) {res.innerHTML = `Seu IMC é ${imc.toFixed(2)} e você está com Obesidade Mórbida`
+            }
+        }   
+
+            
+            
     </script>
     
 </body>
